@@ -1,10 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Chess AI</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>Chess AI Report</title>
+
+	<!--Open Graph-->
+	<!--http://ogp.me/-->
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="Chess AI Report" />
+	<meta property="og:title" content="Chess AI Report" />
+	<meta property="og:description" content="Chess AI Report App with various algorithm" />
+	<meta property="og:image" content="./images/starbucks_logo.png" />
+	<meta property="og:url" content="https://starbucks.co.kr" />
+
+	<!--Twitter Card-->
+	<!--https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started-->
+	<meta property="twitter:card" content="summary" />
+	<meta property="twitter:site" content="Chess AI Report" />
+	<meta property="twitter:title" content="Chess AI Report" />
+	<meta property="twitter:description" content="Chess AI Report App with various algorithm" />
+	<meta property="twitter:image" content="./images/starbucks_logo.png" />
+	<meta property="twitter:url" content="https://starbucks.co.kr" />
+
+	<!--파비콘-->
+	<!--<link rel="shortcut icon" href="favicon.ico" />-->
+	<link rel="icon" href="./favicon.png" />
+	<!--브라우저 스타일 초기화-->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+	<!--Google Fonts - 나눔고딕-->
+	<link rel="preconnect" href="https://fonts.gstatic.com" />
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet" />
+	<!--Google Material Icons-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+	<link rel="stylesheet" href="./css/main.css" />
 </head>
 <body>
+	<!--	HEADER-->
+	<header>
+		<div class="inner">
+			
+			<a href="/" class="logo">
+				<img src="./images/starbucks_logo.png" alt="Theory Of Rose">
+			</a>
 
+			<div class="title">
+				<h1>Chess AI With Various Algorithm</h1>
+			</div>
+
+			<div class="sub-menu">
+				<ul class="menu">
+					<li>
+						<a href="javascript:void(0)">Blog</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)">Github</a>
+					</li>
+					<li>
+						<a href="mailto:theorose49@gmail.com">
+							<span class="material-icons md-18">mail</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		
+	<div class="main-menu">
+		<div class="algorithm">
+			<p>Algorithm</p>
+			<select name="algorithm" id="algorithm-select">
+				<option value="Minimax">Mini-max</option>
+				<option value="Minimax with pruning">Mini-max with alpha-beta pruning</option>
+			</select>
+		</div>
+		<div class="option">
+			<p>Algorithm option</p>
+			<select name="algorithm-option" id="algorithm-option-select">
+				<option value="No Limit">No Limit</option>
+				<option value="1">Depth: 1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+			</select>
+		</div>
+		<div class="language">
+			<p>Language</p>
+			<select name="language" id="language-select">
+				<option value="Javascript">JavaScript</option>
+				<option value="C++">C++</option>
+				<option value="WASM">WASM</option>
+			</select>
+		</div>
+	</div>
+	</header>
+
+	<div id="board">
+		<div class="white A8"></div>
+		<div class="black B8"></div>
+		<div class="white C8"></div>
+		<div class="black D8"></div>
+		<div class="white E8"></div>
+		<div class="black F8"></div>
+		<div class="white G8"></div>
+		<div class="black H8"></div>
+		<div class="black A7"></div>
+		<div class="white B7"></div>
+		<div class="black C7"></div>
+		<div class="white D7"></div>
+		<div class="black E7"></div>
+		<div class="white F7"></div>
+		<div class="black G7"></div>
+		<div class="white H7"></div>
+		<div class="white A6"></div>
+		<div class="black B6"></div>
+		<div class="white C6"></div>
+		<div class="black D6"></div>
+		<div class="white E6"></div>
+		<div class="black F6"></div>
+		<div class="white G6"></div>
+		<div class="black H6"></div>
+		<div class="black A5"></div>
+		<div class="white B5"></div>
+		<div class="black C5"></div>
+		<div class="white D5"></div>
+		<div class="black E5"></div>
+		<div class="white F5"></div>
+		<div class="black G5"></div>
+		<div class="white H5"></div>
+		<div class="white A4"></div>
+		<div class="black B4"></div>
+		<div class="white C4"></div>
+		<div class="black D4"></div>
+		<div class="white E4"></div>
+		<div class="black F4"></div>
+		<div class="white G4"></div>
+		<div class="black H4"></div>
+		<div class="black A3"></div>
+		<div class="white B3"></div>
+		<div class="black C3"></div>
+		<div class="white D3"></div>
+		<div class="black E3"></div>
+		<div class="white F3"></div>
+		<div class="black G3"></div>
+		<div class="white H3"></div>
+		<div class="white A2"></div>
+		<div class="black B2"></div>
+		<div class="white C2"></div>
+		<div class="black D2"></div>
+		<div class="white E2"></div>
+		<div class="black F2"></div>
+		<div class="white G2"></div>
+		<div class="black H2"></div>
+		<div class="black A1"></div>
+		<div class="white B1"></div>
+		<div class="black C1"></div>
+		<div class="white D1"></div>
+		<div class="black E1"></div>
+		<div class="white F1"></div>
+		<div class="black G1"></div>
+		<div class="white H1"></div>
+	</div>
+
+	<footer>
+		Report
+	</footer>
 </body>
 </html>
